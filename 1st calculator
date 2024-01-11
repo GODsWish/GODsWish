@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+int num1;
+double num2;
+char op;
+
+cout<<"Calculator\n";
+cout<<"Enter a number: ";
+cin>>num1;
+cout<<"Enter the operator: ";
+cin>>op;
+cout<<"Enter the another number: ";
+cin>>num2;
+
+double result;
+
+switch(op){
+
+case '+' : result = num1 + num2;
+          break;
+case '-' : result = num1 - num2;
+          break;
+case '/' : result = num1 / num2;
+          break;
+case '*' : result = num1 * num2;
+          break;
+default : "Please enter the valid number\n";
+
+
+}
+cout<<result;
+return 0;
+
+}
+
