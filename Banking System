@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+
+void showbalance(double balance);
+double withdraw(double balance);
+double deposite();
+
+int main(){
+double balance=0;
+int input=0;
+
+do{
+cout<<"*****************************************************************\n";
+cout<<"*                  Welcome to M&S Bank limited                  *\n";
+cout<<"*****************************************************************\n\n";
+
+cout<<"1.Check bank balance.\n";
+cout<<"2.Deposite Cash\n";
+cout<<"3.Withdraw Cash.\n";
+cout<<"4.Exit\n\n";
+cout<<"Please select the given option: ";
+cin>>input ;
+cout<<'\n';
+
+//yo tala kole chai aba yo loop lai crash huna dedaina re yedi user le j pai tai halyo vane.
+cin.clear();
+fflush(stdin);
+ 
+ switch(input){
+ 	case 1 : showbalance(balance);
+ 	        break;
+ 	
+ 	case 2 :balance += deposite();
+ 	        showbalance(balance);
+ 	        break;
+ 	       
+ 	case 3 :
+ 	        balance -=withdraw (balance);
+ 	        showbalance(balance);
+ 	        break;
+ 	        
+ 	case 4 : cout<<"(Thank You for Choosing us & HAPPY NEW YEAR 2024.)";
+ 	       break;
+ 	
+ 	default:cout<<"Please enter the valid Input\n";
+ }
+
+}while(input !=4);
+
+return 0;
+}
+void showbalance(double balance){
+	cout<< "Your balance is = RS "<<balance<<'\n';
+}
+double withdraw(double balance){
+	double amount=0;
+	cout<<"Please enter the amount: Rs";
+	cin>>amount;
+	
+	if (amount >balance){
+		cout<<"insufficient balance.\n";
+		return 0;
+	}
+	else if (amount<0){
+		cout<<"Please enter a valid input.\n";
+		return 0;
+	}
+	else{
+		return amount;
+	}
+	
+	
+
+	
+}
+double deposite(){
+		float amount = 0;
+	cout<<"Enter the amount: RS ";
+	cin>>amount;
+	
+	if(amount >0){
+		return amount;
+	
+	}else{
+		cout<<"Please enter the valid number:";
+		return 0;
+	}
+	
+}
+
+
+
+
