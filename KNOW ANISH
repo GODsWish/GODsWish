@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+string question[]={"1. Anish ko favourite Football club?",
+                   "2. Anish chad ne bike ko name ?",
+                   "3. Anish lai khelna man parne position football ma ?",
+                   "4. Anish ko favourite tarkari khana ma?",
+                   "5. Anish ko favourite player?"};
+
+string answer[][4]={{"A.REAL MDRID","B.BARCELONA","C.ARSENAL","D.MANCHESTER UNITED"},
+                   {"A.DUKE250","B.CFMOTO250","C.DOMMINAR250","D.CFMOTONK300"},
+                   {"A.CM","B.CAM","C.RM","D.LM"},
+                   {"A.CAULIFLOWER","B.TOFU","C.MASEURA","D.GUNDRUK"},
+                   {"A.C.RONALDO","B.MESSI","C.ROONEY","D.SCHOLES"}};
+
+char answerkey[]={'D','B','B','D','A'};
+
+double size= sizeof(question)/sizeof(question[0]);
+char guess;
+double score;
+
+for(int i=0; i<size; i++){
+    cout<<"------> WELCOME TO ANISH LAI CHIN XA KI NAI <-------\n";
+    cout<< question[i]<<endl;
+    cout<<"==================================================\n";
+   
+
+    for(int j=0; j<sizeof(answer[i])/sizeof(answer[i][0]); j++) {
+        cout<<answer[i][j]<<endl;
+    }
+    cout<<"Your Guess Please: ";
+    cin>> guess;
+    guess=toupper(guess);
+
+    if(guess == answerkey[i]){
+
+        cout<<"MILYO HAI MILYO\n";
+        cout<<endl;
+        score++;
+    }
+    else {
+        cout<<"MILENA KHANCHA/KHANCHI\n";
+        cout<<endl;
+        cout<<"THIK UTTAR= "<<answerkey[i]<<'\n';
+        cout<<endl;
+    }
+
+}
+cout<<"ABA RESULT HERAM HAI TA KATTI KO CHIDNA RAIHCA ANISH LAI.\n";
+cout<<"60% vanda mathi ayo vane chine ko raicha natra chineko xaina.\n";
+cout<<score<<" ota milecha\n";
+cout<<"yeti question ma "<<size<<'\n';
+int result= (score/(double)size)*100;
+if (result >60){
+    cout<<"'Jityo' Yo manche le ANISH lai chinda raihca. \n";
+}
+else{
+    cout<<"You Dont know shit about anish (PLEASE STAY AWAY)\n";
+}
+cout<< result<<"%";
+
+
+
+    return 0;
+}
